@@ -3,7 +3,6 @@
     "test": "jest"
   },
   "dependencies": {
-    "@bugsnag/js": "^6.2.0",
     "jest": "^24.8.0"
   }
 }

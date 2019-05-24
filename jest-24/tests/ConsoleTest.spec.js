@@ -5,6 +5,16 @@ describe('Describe success', () => {
         console.log('Hobnobs')
     })
 
+    it('Console dir string', () => {
+        console.dir('Hobnobs')
+    })
+
+    it('Console count', () => {
+        console.count('biscuit')
+        console.count('biscuit')
+        console.count('biscuit')
+    })
+
     it('Console log array', () => {
         console.log([
             'Hobnobs',
