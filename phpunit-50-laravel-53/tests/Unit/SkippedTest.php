@@ -4,7 +4,7 @@ namespace Tests\Unit;
 
 use Tests\TestCase;
 
-class SkippedTest extends \TestCase
+class SkippedTest extends TestCase
 {
     public function testSuccess()
     {

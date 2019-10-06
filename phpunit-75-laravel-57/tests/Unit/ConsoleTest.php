@@ -67,4 +67,12 @@ class ConsoleTest extends TestCase
 
         return $this->assertTrue(true);
     }
+
+    public function testConsoleHelper()
+    {
+        console('This', 'is', 'the', 'same', 'call');
+        console('This is a different call');
+
+        return $this->assertTrue(true);
+    }
 }

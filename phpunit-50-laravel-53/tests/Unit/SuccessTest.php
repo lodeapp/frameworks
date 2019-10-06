@@ -4,7 +4,7 @@ namespace Tests\Unit;
 
 use Tests\TestCase;
 
-class SuccessTest extends \TestCase
+class SuccessTest extends TestCase
 {
     public function testSuccess()
     {

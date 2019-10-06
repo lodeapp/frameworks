@@ -4,7 +4,7 @@ namespace Tests\Unit;
 
 use Tests\TestCase;
 
-class WarningProtectedMethodTest extends \TestCase
+class WarningProtectedMethodTest extends TestCase
 {
     protected function testProtectedWarning()
     {

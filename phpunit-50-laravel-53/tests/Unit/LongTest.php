@@ -11,7 +11,7 @@ use Tests\TestCase;
  * but we can quickly enable delay centrally.
  */
 
-class LongTest extends \TestCase
+class LongTest extends TestCase
 {
     protected $delay = 0; // In seconds
 

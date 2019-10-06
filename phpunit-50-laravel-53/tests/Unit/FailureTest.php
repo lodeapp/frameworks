@@ -6,7 +6,7 @@ use Exception;
 use Mockery as m;
 use Tests\TestCase;
 
-class FailureTest extends \TestCase
+class FailureTest extends TestCase
 {
     public function testSuccess()
     {
