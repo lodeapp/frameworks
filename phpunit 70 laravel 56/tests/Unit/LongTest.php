@@ -17,7 +17,6 @@ class LongTest extends TestCase
 
     public function test1()
     {
-        sleep($this->delay);
         $this->assertTrue(true);
     }
 

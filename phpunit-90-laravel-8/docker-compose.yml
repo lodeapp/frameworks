@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  lode:
+    image: php:7.4
+    volumes:
+      - .:/var/www/lode
+    working_dir: /var/www/lode
+    networks:
+      - amqnet
+
+networks:
+  amqnet:
+    driver: "bridge"

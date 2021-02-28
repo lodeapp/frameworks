@@ -1,0 +1,31 @@
+#!/usr/bin/env bash
+
+command="./vendor/bin/phpunit"
+setup="docker run --rm -it --volume $(pwd):/app composer:2.0 install --ignore-platform-reqs --no-scripts"
+
+if [[ ${1} == setup ]]; then
+    $setup
+    exit
+fi
+
+machine="lode"
+ip=$(docker-machine ip $machine 2>/dev/null)
+compose="docker-compose -f docker-compose.yml"
+
+if [ -z "$ip" ]; then
+
+    if [ -z $(docker-machine status $machine 2>/dev/null) ]; then
+        printf "Docker host %s doesn't exist, creating...\n" $machine
+
+        docker-machine create $machine --virtualbox-cpu-count 2 --virtualbox-memory 2048 --virtualbox-boot2docker-url https://github.com/boot2docker/boot2docker/releases/download/v18.06.1-ce/boot2docker.iso --engine-storage-driver aufs
+    else
+        printf "Docker host %s is stopped, starting...\n" $machine
+        docker-machine start $machine
+    fi
+
+    ip=$(docker-machine ip $machine 2>/dev/null)
+
+fi
+
+eval $(docker-machine env $machine)
+$compose run --rm lode $command "$@"

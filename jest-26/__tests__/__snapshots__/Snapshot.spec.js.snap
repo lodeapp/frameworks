@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`A test with snapshots Does not match HTML snapshot 1`] = `
+"<div>
+  <h2>Hello world!</h2>
+  <p>Esse excepteur aliqua proident aliquip deserunt fugiat officia et consequat sit sint aliqua exercitation.</p>
+  <small>Culpa cupidatat ut velit aliqua.</small>
+</div>"
+`;
+
+exports[`A test with snapshots Does not match snapshot 1`] = `"Nisi occaecat ullamco laborum laborum voluptate consectetur do minim et officia enim."`;
+
+exports[`A test with snapshots Matches HTML snapshot 1`] = `
+"<div>
+  <h2>Hello world!</h2>
+  <p>Esse excepteur aliqua proident aliquip deserunt fugiat officia et consequat sit sint aliqua exercitation.</p>
+  <small>Culpa cupidatat ut velit aliqua.</small>
+</div>"
+`;
+
+exports[`A test with snapshots Matches snapshot 1`] = `"Velit dolore laboris qui est."`;

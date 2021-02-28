@@ -21,29 +21,31 @@ trait CreatesApplication
 
         Hash::setRounds(4);
 
-        // $app->singleton(
-        //     \Illuminate\Contracts\Debug\ExceptionHandler,
-        //     Handler
-        // );
+        // Throw all errors, while avoiding binding exceptions in Laravel.
+        // This is especially useful for fatal errors inside Lode's reporters.
+        $app->singleton(
+            \Illuminate\Contracts\Debug\ExceptionHandler::class,
+            Handler::class
+        );
 
         return $app;
     }
 }
 
-// class Handler implements \Illuminate\Contracts\Debug\ExceptionHandler
-// {
-//     public function report(Exception $e)
-//     {
-//         //
-//     }
+class Handler implements \Illuminate\Contracts\Debug\ExceptionHandler
+{
+    public function report(Exception $e)
+    {
+        //
+    }
 
-//     public function render($request, Exception $e)
-//     {
-//         throw $e;
-//     }
+    public function render($request, Exception $e)
+    {
+        throw $e;
+    }
 
-//     public function renderForConsole($output, Exception $e)
-//     {
-//         throw $e;
-//     }
-// }
+    public function renderForConsole($output, Exception $e)
+    {
+        throw $e;
+    }
+}
