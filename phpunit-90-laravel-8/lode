@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-command="./vendor/bin/phpunit"
+command="php artisan test"
 setup="docker run --rm -it --volume $(pwd):/app composer:2.0 install --ignore-platform-reqs --no-scripts"
 
 if [[ ${1} == setup ]]; then
@@ -28,4 +28,4 @@ if [ -z "$ip" ]; then
 fi
 
 eval $(docker-machine env $machine)
-$compose run --rm lode $command "$@"
+$compose run -T --rm lode $command "$@"
