@@ -1,5 +1,3 @@
-version: '3'
-
 services:
   lode:
     image: php:7.4

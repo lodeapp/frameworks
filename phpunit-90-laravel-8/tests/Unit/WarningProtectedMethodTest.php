@@ -13,6 +13,8 @@ class WarningProtectedMethodTest extends TestCase
 
     public function testPublicSuccess()
     {
+        // trigger_error('Hello', E_USER_WARNING);
+
         $this->assertTrue(true);
     }
 }

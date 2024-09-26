@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+command="php ./vendor/phpunit/phpunit/phpunit"
+setup="docker run --rm -it --volume $(pwd):/app composer:2.0 install --ignore-platform-reqs --no-scripts"
+
+if [[ ${1} == setup ]]; then
+    $setup
+    exit
+fi
+
+compose="docker compose -f docker-compose.yml"
+$compose run -T --rm lode $command "$@"

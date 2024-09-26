@@ -1,0 +1,12 @@
+services:
+  lode:
+    image: php:8.1
+    volumes:
+      - .:/var/www/lode
+    working_dir: /var/www/lode
+    networks:
+      - lodenet
+
+networks:
+  lodenet:
+    driver: bridge
